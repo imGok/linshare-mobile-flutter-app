@@ -66,3 +66,17 @@ final document = Document(
   1,
   MediaType.parse('text/plain'),
 );
+
+final user1 = User(
+  UserId('uuid'),
+  'locale',
+  'externalMailLocale',
+  'domain',
+  'firstName',
+  'lastName',
+  'mail',
+  true,
+  true,
+  AccountType.INTERNAL,
+  QuotaId('quotaUuid')
+);

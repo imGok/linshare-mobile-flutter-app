@@ -69,6 +69,7 @@ export 'src/model/sharedspacedocument/work_group_document.dart';
 export 'src/model/sharedspacedocument/work_group_folder.dart';
 export 'src/model/copy/copy_request.dart';
 export 'src/model/copy/space_type.dart';
+export 'src/model/user/user.dart';
 
 // interactor
 export 'src/usecases/authentication/create_permanent_token_interactor.dart';
@@ -90,6 +91,7 @@ export 'src/usecases/myspace/remove_multiple_documents_interactor.dart';
 export 'src/usecases/shared_space/remove_shared_space_node_interactor.dart';
 export 'src/usecases/shared_space/remove_multiple_shared_space_nodes_interactor.dart';
 export 'src/usecases/download_file/download_multiple_file_ios_interactor.dart';
+export 'src/usecases/authentication/get_authorized_user_interactor.dart';
 
 // repository
 export 'src/repository/authentication/authentication_repository.dart';
