@@ -28,27 +28,24 @@
 // <http://www.gnu.org/licenses/> for the GNU Affero General Public License version
 //  3 and <http://www.linshare.org/licenses/LinShare-License_AfferoGPL-v3.pdf> for
 //  the Additional Terms applicable to LinShare software.
+//
 
-import 'package:data/src/datasource/authentication_datasource.dart';
+import 'package:data/src/network/model/response/user_response.dart';
 import 'package:domain/domain.dart';
 
-class AuthenticationRepositoryImpl extends AuthenticationRepository {
-  final AuthenticationDataSource authenticationDataSource;
+final userResponse1 = UserResponse(
+  UserId('uuid'),
+  'locale',
+  'externalMailLocale',
+  'domain',
+  'firstName',
+  'lastName',
+  'mail',
+  true,
+  true,
+  AccountType.INTERNAL,
+  QuotaId('quotaUuid')
+);
 
-  AuthenticationRepositoryImpl(this.authenticationDataSource);
 
-  @override
-  Future<Token> createPermanentToken(Uri baseUrl, UserName userName, Password password) async {
-    return authenticationDataSource.createPermanentToken(baseUrl, userName, password);
-  }
-
-  @override
-  Future<bool> deletePermanentToken(Token token) async {
-    return authenticationDataSource.deletePermanentToken(token);
-  }
-
-  @override
-  Future<User> getAuthorizedUser() async {
-    return authenticationDataSource.getAuthorizedUser();
-  }
-}
+final user1 = userResponse1.toUser();

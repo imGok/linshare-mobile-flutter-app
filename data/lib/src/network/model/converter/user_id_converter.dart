@@ -28,27 +28,19 @@
 // <http://www.gnu.org/licenses/> for the GNU Affero General Public License version
 //  3 and <http://www.linshare.org/licenses/LinShare-License_AfferoGPL-v3.pdf> for
 //  the Additional Terms applicable to LinShare software.
+//
 
-import 'package:data/src/datasource/authentication_datasource.dart';
+import 'dart:convert';
+
 import 'package:domain/domain.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-class AuthenticationRepositoryImpl extends AuthenticationRepository {
-  final AuthenticationDataSource authenticationDataSource;
-
-  AuthenticationRepositoryImpl(this.authenticationDataSource);
-
-  @override
-  Future<Token> createPermanentToken(Uri baseUrl, UserName userName, Password password) async {
-    return authenticationDataSource.createPermanentToken(baseUrl, userName, password);
-  }
+class UserIdConverter implements JsonConverter<UserId, String> {
+  const UserIdConverter();
 
   @override
-  Future<bool> deletePermanentToken(Token token) async {
-    return authenticationDataSource.deletePermanentToken(token);
-  }
+  UserId fromJson(String json) => UserId(json);
 
   @override
-  Future<User> getAuthorizedUser() async {
-    return authenticationDataSource.getAuthorizedUser();
-  }
+  String toJson(UserId object) => jsonEncode(object.uuid);
 }
