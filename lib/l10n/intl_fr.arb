@@ -407,5 +407,38 @@
   "@can_not_proceed_while_offline": {
     "type": "text",
     "placeholders": {}
+  },
+  "account_details": "Account details",
+  "@account_details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "first_name": "First name",
+  "@first_name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "last_name": "Last name",
+  "@last_name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "last_login": "Last login",
+  "@last_login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "available_space": "Available space",
+  "@available_space": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "available_space_value": "{usedSpace} on {quota}",
+  "@available_space_value": {
+    "type": "text",
+    "placeholders": {
+      "quota": {},
+      "usedSpace": {}
+    }
   }
 }

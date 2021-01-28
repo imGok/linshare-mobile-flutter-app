@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2021-01-26T14:26:57.967696",
+  "@@last_modified": "2021-01-27T15:26:51.574364",
   "initializing_data": "Initializing data...",
   "@initializing_data": {
     "type": "text",
@@ -407,5 +407,43 @@
   "@can_not_proceed_while_offline": {
     "type": "text",
     "placeholders": {}
+  },
+  "account_details_title": "Account Details",
+  "@account_details_title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "account_details": "Account details",
+  "@account_details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "first_name": "First name",
+  "@first_name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "last_name": "Last name",
+  "@last_name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "last_login": "Last login",
+  "@last_login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "available_space": "Available space",
+  "@available_space": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "available_space_value": "{usedSpace} on {quota}",
+  "@available_space_value": {
+    "type": "text",
+    "placeholders": {
+      "quota": {},
+      "usedSpace": {}
+    }
   }
 }

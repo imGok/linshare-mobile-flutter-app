@@ -90,16 +90,11 @@ class SideMenuDrawerWidget extends StatelessWidget {
           Divider(),
           ListTile(
             leading: SvgPicture.asset(
-              imagePath.icExitToApp,
+              imagePath.icSettingsApplications,
               fit: BoxFit.none,
             ),
-            title: Text(AppLocalizations.of(context).logout, style: TextStyle(fontSize: 16, color: AppColor.documentNameItemTextColor)),
-            onTap: () => ConfirmModalSheetBuilder(appNavigation)
-              .key(Key('logout_confirm_modal'))
-              .title(AppLocalizations.of(context).confirm_remove_account_title)
-              .cancelText(AppLocalizations.of(context).cancel)
-              .onConfirmAction(AppLocalizations.of(context).logout, () => sideMenuDrawerViewModel.logout())
-              .show(context),
+            title: Text(AppLocalizations.of(context).account_details, style: TextStyle(fontSize: 16, color: AppColor.documentNameItemTextColor)),
+            onTap: () => sideMenuDrawerViewModel.goToAccountDetails(),
           ),
           Divider()
         ],
