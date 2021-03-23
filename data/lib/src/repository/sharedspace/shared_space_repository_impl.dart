@@ -46,4 +46,15 @@ class SharedSpaceRepositoryImpl implements SharedSpaceRepository {
   Future<SharedSpaceNodeNested> deleteSharedSpace(SharedSpaceId sharedSpaceId) {
     return _sharedSpaceDataSource.deleteSharedSpace(sharedSpaceId);
   }
+
+  @override
+  Future<SharedSpaceNodeNested> getSharedSpace(
+    SharedSpaceId sharedSpaceId,
+    {
+      MembersParameter membersParameter = MembersParameter.WITHOUT_MEMBERS,
+      RolesParameter rolesParameter = RolesParameter.WITH_ROLE
+    }
+  ) {
+    return _sharedSpaceDataSource.getSharedSpace(sharedSpaceId, membersParameter: membersParameter, rolesParameter: rolesParameter);
+  }
 }
