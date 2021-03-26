@@ -40,12 +40,10 @@ import 'package:equatable/equatable.dart';
 class SharedSpaceDetailsInfo extends Equatable {
   final SharedSpaceNodeNested sharedSpaceNodeNested;
   final AccountQuota quota;
+  final List<SharedSpaceMember> members;
 
-  SharedSpaceDetailsInfo(this.sharedSpaceNodeNested, this.quota);
+  SharedSpaceDetailsInfo(this.sharedSpaceNodeNested, this.quota, this.members);
 
   @override
-  List<Object> get props => [
-    sharedSpaceNodeNested,
-    quota
-  ];
+  List<Object> get props => [sharedSpaceNodeNested, quota, members];
 }

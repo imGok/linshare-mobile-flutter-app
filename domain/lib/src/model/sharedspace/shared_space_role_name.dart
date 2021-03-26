@@ -31,5 +31,13 @@
 //
 
 enum SharedSpaceRoleName {
-  READER, CONTRIBUTOR, WRITER, ADMIN
+  READER,
+  CONTRIBUTOR,
+  WRITER, ADMIN
+}
+
+extension SharedSpaceRoleNameExtension on SharedSpaceRoleName {
+  String getEnumName() {
+    return toString().split('.').last.toLowerCase();
+  }
 }

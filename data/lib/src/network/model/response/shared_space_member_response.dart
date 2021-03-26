@@ -30,6 +30,7 @@
 //  the Additional Terms applicable to LinShare software.
 
 import 'package:data/src/network/model/account/account_dto.dart';
+import 'package:data/src/network/model/converter/datetime_converter.dart';
 import 'package:data/src/network/model/converter/shared_space_member_id_converter.dart';
 import 'package:data/src/network/model/response/shared_space_member_node_dto.dart';
 import 'package:data/src/network/model/sharedspace/shared_space_role_dto.dart';
@@ -42,6 +43,7 @@ part 'shared_space_member_response.g.dart';
 
 @JsonSerializable()
 @SharedSpaceMemberIdConverter()
+@DatetimeConverter()
 class SharedSpaceMemberResponse with EquatableMixin {
   final AccountDto account;
   final DateTime creationDate;

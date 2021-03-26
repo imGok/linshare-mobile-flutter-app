@@ -41,6 +41,7 @@ class SharedSpaceDetailsViewModel extends BaseViewModel {
   final AppNavigation _appNavigation;
   final GetSharedSpaceInteractor _getSharedSpaceInteractor;
   final GetQuotaInteractor _getQuotaInteractor;
+  final GetAllSharedSpaceMembersInteractor _getAllSharedSpaceMembersInteractor;
 
   SharedSpaceNodeNested sharedSpaceNodeNested;
 
@@ -48,7 +49,8 @@ class SharedSpaceDetailsViewModel extends BaseViewModel {
     Store<AppState> store,
     this._appNavigation,
     this._getSharedSpaceInteractor,
-    this._getQuotaInteractor
+    this._getQuotaInteractor,
+    this._getAllSharedSpaceMembersInteractor
   ) : super(store);
 
   Future<SharedSpaceNodeNested> getSharedSpace(SharedSpaceId sharedSpaceId) async {
@@ -65,10 +67,21 @@ class SharedSpaceDetailsViewModel extends BaseViewModel {
         .accountQuota;
   }
 
+  Future<List<SharedSpaceMember>> getSharedSpaceMembers(
+      SharedSpaceId sharedSpaceId) async {
+    return (await _getAllSharedSpaceMembersInteractor
+            .execute(sharedSpaceId))
+        .map((result) => result as SharedSpaceMembersViewState)
+        .getOrElse(() => null)
+        .members;
+  }
+
   Future<SharedSpaceDetailsInfo> getSharedSpaceDetails(SharedSpaceDetailsArguments sharedSpaceDetailsArguments) async {
     return await getSharedSpace(sharedSpaceDetailsArguments.sharedSpaceId).then(
-      (sharedSpace) => getAccountQuota(sharedSpace.quotaId).then((accountQuota) =>
-        SharedSpaceDetailsInfo(sharedSpace, accountQuota)));
+      (sharedSpace) => getAccountQuota(sharedSpace.quotaId).then((accountQuota) async {
+        final members = await getSharedSpaceMembers(sharedSpace.sharedSpaceId);
+        return SharedSpaceDetailsInfo(sharedSpace, accountQuota, members);
+      }));
   }
 
   void backToSharedSpacesList() {

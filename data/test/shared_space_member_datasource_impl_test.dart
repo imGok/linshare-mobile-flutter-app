@@ -70,7 +70,7 @@ void main() {
           .thenThrow(error);
 
       await _sharedSpaceMemberDataSourceImpl.getMembers(sharedSpaceId1)
-          .catchError((error) => expect(error, isA<SharedSpacesNotFound>()));
+          .catchError((error) => expect(error, isA<SharedSpaceNotFound>()));
     });
   });
 }

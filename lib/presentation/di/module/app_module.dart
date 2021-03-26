@@ -94,6 +94,9 @@ class AppModule {
         getIt<RemoteExceptionThrower>()));
     getIt.registerFactory(() => SortDataSourceImpl(
         getIt<SharedPreferences>()));
+    getIt.registerFactory(() => SharedSpaceMemberDataSourceImpl(
+        getIt<LinShareHttpClient>(),
+        getIt<RemoteExceptionThrower>()));
   }
 
   void _provideDataSource() {
