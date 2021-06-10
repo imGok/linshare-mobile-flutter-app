@@ -391,8 +391,7 @@ class ReceivedShareViewModel extends BaseViewModel {
   }
 
   void goToDetails(ReceivedShare receivedShare) {
-    _appNavigation.popBack();
-    _appNavigation.push(RoutePaths.receivedShareDetails,
+    _appNavigation.popAndPush(RoutePaths.receivedShareDetails,
         arguments: ReceivedShareDetailsArguments(receivedShare));
   }
 

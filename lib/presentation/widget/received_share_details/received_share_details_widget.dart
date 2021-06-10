@@ -117,25 +117,25 @@ class _ReceivedShareDetailsWidgetState extends State<ReceivedShareDetailsWidget>
     }
 
     return SingleChildScrollView(
-        child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _receivedShareDetailsTitleTileWidget(state),
-        Divider(),
-        Column(
-          children: [
-            _receivedShareInformationTile(AppLocalizations.of(context).modified,
-                state.receivedShare.modificationDate.getMMMddyyyyFormatString()),
-            _receivedShareInformationTile(AppLocalizations.of(context).created,
-                state.receivedShare.creationDate.getMMMddyyyyFormatString()),
-            _receivedShareInformationTile(AppLocalizations.of(context).expiration,
-                state.receivedShare.creationDate.getMMMddyyyyFormatString()),
-          ],
-        ),
-        Divider(),
-        _descriptionWidget(state),
-      ],
-    ));
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _receivedShareDetailsTitleTileWidget(state),
+          Divider(),
+          Column(
+            children: [
+              _receivedShareInformationTile(AppLocalizations.of(context).modified,
+                  state.receivedShare.modificationDate.getMMMddyyyyFormatString()),
+              _receivedShareInformationTile(AppLocalizations.of(context).created,
+                  state.receivedShare.creationDate.getMMMddyyyyFormatString()),
+              _receivedShareInformationTile(AppLocalizations.of(context).expiration,
+                  state.receivedShare.creationDate.getMMMddyyyyFormatString()),
+            ],
+          ),
+          Divider(),
+          _descriptionWidget(state),
+        ],
+      ));
   }
 
   ListTile _receivedShareDetailsTitleTileWidget(ReceivedShareDetailsState state) {
