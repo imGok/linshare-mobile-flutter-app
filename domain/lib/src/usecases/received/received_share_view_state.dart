@@ -44,7 +44,7 @@ class GetAllReceivedShareSuccess extends ViewState {
 }
 
 class GetAllReceivedShareFailure extends FeatureFailure {
-  final Exception exception;
+  final dynamic exception;
 
   GetAllReceivedShareFailure(this.exception);
 
@@ -116,7 +116,7 @@ class GetReceivedShareSuccess extends ViewState {
 }
 
 class GetReceivedShareFailure extends FeatureFailure {
-  final Exception exception;
+  final dynamic exception;
 
   GetReceivedShareFailure(this.exception);
 
